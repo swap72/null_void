@@ -1,0 +1,7 @@
+EXPRESSION#>hello
+STATEMENT#>return "hi"\
+	        + ""\
+	        + ";"\
+	        + "";
+VAR#>"hello"
+VAR#>"how are you doing..?"
