@@ -1,0 +1,2 @@
+practice6.Task1
+practice6.ThreadViaInterface
