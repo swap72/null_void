@@ -1,0 +1,9 @@
+practice5.NetBanking
+practice5.UPI
+practice5.CreditCard
+practice5.Animal
+practice5.Dog
+practice5.Payment
+practice5.Animal2
+practice5.Main2
+practice5.Cat
