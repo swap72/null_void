@@ -1,0 +1,138 @@
+Prepare :
+
+postman headers
+http body 
+request / response cycle
+authorization vs authentication
+database TCL
+RESTful APIs architecture
+MVC
+JSON vs xml
+token bearer
+basic auth
+
+
+
+
+
+http message consists of three parts
+
+
+start line
+headers
+body/payload
+
+start line : method type http version and url path
+
+
+1️⃣ What are HTTP Headers?
+
+HTTP headers are key–value pairs that carry metadata about a request or response.
+
+They tell the server or client how to interpret the message — things like:
+
+what kind of data is being sent (Content-Type)
+
+what format the client wants back (Accept)
+
+authentication info (Authorization)
+
+caching rules (Cache-Control)
+
+and much more.
+
+
+POST /api/employees HTTP/1.1
+Host: api.example.com
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer abc123
+User-Agent: PostmanRuntime/7.32.3
+
+Here, everything except the first line is part of the headers section.
+
+
+
+
+Content-Type: application/json
+Tells what format the body (payload) is in.
+
+Accept: application/json
+Tells the server what format the client can handle.
+
+
+Authorization: Bearer <token>
+Used for authentication.
+
+
+User-Agent: Mozilla/5.0 (Wind
+ows NT 10.0; Win64; x64)
+Identifies the client (browser, Postman, mobile app, etc.)
+
+
+Host: api.example.com
+Specifies the domain name of the server.
+
+
+Cache-Control: no-cache, no-store
+Controls caching behavior.
+
+
+Cookie: session_id=xyz123
+Set-Cookie: session_id=xyz123; HttpOnly
+Used for managing session data in web apps.
+
+Content-Length: 1024
+tells how many bytes does the body has
+
+
+
+
+
+
+
+
+API working basics
+
+
+
+
+        🔹 HTTP (Stateless)
+               │
+               ▼
+   ❗ Problem: Server forgets who you are after every request
+               │
+               ▼
+        🍪 Cookies invented
+      (Browser stores small data)
+               │
+               ▼
+      🗂️ Sessions introduced
+  (Server keeps user info; browser holds Session ID in cookie)
+               │
+               ▼
+     🔑 Session ID identifies which
+       session belongs to which user
+               │
+               ▼
+   🚪 Authentication + Authorization formalized
+   (AuthN = Who are you? | AuthZ = What can you do?)
+               │
+               ▼
+  🌐 Problem: Sessions don’t scale well for large systems / APIs
+               │
+               ▼
+       🔸 Tokens introduced
+   (Client keeps proof of identity — no server memory)
+               │
+               ▼
+        🧱 JWT (JSON Web Token)
+   → A standardized, secure token format
+   → Encodes user data + signature
+               │
+               ▼
+    ✅ Modern Auth Systems
+    (OAuth2, OpenID Connect, API tokens, etc.)
+
+
+
